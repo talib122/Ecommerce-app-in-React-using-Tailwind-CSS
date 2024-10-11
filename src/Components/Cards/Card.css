@@ -1,0 +1,14 @@
+.mainBox:hover img{
+transform: scale(1.2);
+}
+.mainBox:hover .small_card{
+    transform: translate(20px);
+    opacity: 1;
+}
+.small_card .boxIcon{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid gray;
+    padding: 5px 5px;
+}

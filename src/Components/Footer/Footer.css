@@ -1,0 +1,96 @@
+.footer{
+    width: 100%;
+    background: #f3f1f1;
+    padding: 19px 48px;
+}
+
+.footer .tag{
+    margin: 10px 0;
+}
+.footer .tag a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin: 8px 0;
+}
+.footer .tag h1{
+    font-size: 25px;
+    margin: 25px 0;
+    color: #1c0080;
+}
+.footer .tag .center,h1,.search_bar{
+    text-align: center;
+}
+.footer .tag .footer_icon{
+    display: flex;
+    justify-content: center;
+margin-top: 40px;
+}
+.footer .tag .footer_icon a{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.09);
+    position: relative;
+    margin: 0 5px;
+    z-index: 10;
+    overflow: hidden;
+} 
+.footer .tag .footer_icon a{
+   font-size: 15px;
+   line-height: 30px;
+   z-index: 10;
+   position: relative;
+   transition: 0.5s; 
+}
+.footer .tag .footer_icon a:hover .icon1{
+    color: white;
+}
+.footer .tag .footer_icon a::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -90px;
+    background: linear-gradient(-45deg, #c72092,#1c0080);
+    position: absolute;
+    z-index: -10;
+    transition: 0.5s;
+}
+.footer .tag .footer_icon a:hover::after{
+    left: 0;
+}
+.footer .tag .search_bar{
+    width: 230px;
+    height: 30px;
+    background-color: rgb(202,202, 202);
+    border-radius: 25px;
+}
+.footer .tag .search_bar input{
+    width: 200px;
+    padding: 2px 0;
+    position: relative;
+    top: 9%;
+    /* left: 5%; */
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 14px;
+}
+.footer .tag .search_bar button{
+    padding: 7px 15px;
+    background: linear-gradient(to right, #c72092,#5D3FD3);
+    border: none;
+    margin-top: 15px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+
+}
+.search_bar input::placeholder{
+    color: black;
+    font-size: 15px;
+}
