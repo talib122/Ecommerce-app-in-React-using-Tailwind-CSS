@@ -16,6 +16,6 @@
 
 I used the localstorage for email & password, and this app is completeltely responsive for mobile and desktop  
 
-Check the Demo by clicking the link below
+Check the Demo video below
 
 https://github.com/user-attachments/assets/4442234e-f928-4690-9684-8fdb1dedf099
