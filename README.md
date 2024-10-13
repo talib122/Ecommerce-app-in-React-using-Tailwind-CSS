@@ -18,4 +18,4 @@ I used the localstorage for email & password, and this app is completeltely resp
 
 Check the Demo video below
 
-https://github.com/user-attachments/assets/4442234e-f928-4690-9684-8fdb1dedf099
+https://github.com/user-attachments/assets/73e80009-2bbc-43e3-85ba-3def17c418c4
