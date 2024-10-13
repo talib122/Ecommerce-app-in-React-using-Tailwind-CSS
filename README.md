@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Talib Hussain and this is Ecommerce app related to shoes created in React using Tailwind css </h1>
+<h1 align="center">Hi 👋, I'm Talib Hussain and this is Ecommerce app(frontend) related to shoes created in React using Tailwind css </h1>
 <h3 align="center">A passionate React JS developer</h3>
 
 <h3 align="left">Follow steps below to run this app:</h3>
