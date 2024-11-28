@@ -1,14 +1,20 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faBars, faXmark, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { CartContext } from '../Cards/CartContext';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [IsProfileOpen, seProfileOpen]=useState(false);
+  const [user, setUser]=useState({name:'',email:'',image:''});
   const { cartItems } = useContext(CartContext);
   const navigate = useNavigate();
-
+  const handleProfileOpen=()=>{
+    seProfileOpen((profile)=>!profile)
+  };
   const handleHamburger = () => {
     setMenuOpen((Mopen) => !Mopen);
   };
@@ -17,10 +23,21 @@ const Navbar = () => {
   const handleLogout = () => {
     navigate('/login'); // Redirect to login page or any other route
   };
+  useEffect(()=>{
+   const currentUser=localStorage.getItem('username');
+   const email=localStorage.getItem('email');
+   const image=localStorage.getItem('image');
+   if(currentUser && email){
+    setUser({name:currentUser , email,image});
+   }
+   else{
+    setUser({name:"Guest",email:"",image:"guest"})
+   }
+  },[])
 
   return (
     <div className="flex items-center justify-between shadow-xl fixed w-full px-14 top-0 bg-white z-50">
-      <div className="text-[35px] text-bold text-[#c72092]">
+     <div className="text-[35px] text-bold text-[#c72092]">
         WOW<span className="text-blue-700 underline">shoes</span>
       </div>
       
@@ -48,12 +65,27 @@ const Navbar = () => {
             )}
           </Link>
         </span>
-        <button
-                className="bg-[#c72092] rounded-md text-white px-4 py-2"
+        <ClickAwayListener onClickAway={() => seProfileOpen(false)}>
+              <div className='relative h-10 w-20 bg-slate-300  rounded-2xl flex items-center' onClick={handleProfileOpen}>
+                <img src={user.image} className='h-8 w-8 rounded-full ml-3 bg-black' />
+                <FontAwesomeIcon icon={faAngleDown} className='ml-2 text-[12px]'/>
+                       
+              {IsProfileOpen&&(
+                <div className='absolute bg-white mt-[225px] right-0 -mr-9  shadow-xl rounded-md px-3 py-5 '>
+                  <ul>
+                    <li>user : {user.name}</li>
+                    <li>Email : {user.email}</li>
+                  </ul>
+                  <span className='flex justify-center items-center mx-auto pt-3 pb-4'><button
+                className="bg-[#c72092] rounded-md text-white px-4 py-2 "
                 onClick={handleLogout} 
               >
                 Logout
-              </button>
+              </button></span>
+                </div>
+              )
+              }
+              </div></ClickAwayListener>
       </div>
 
       {/* Mobile Menu Icon */}

@@ -11,7 +11,13 @@ const Register = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const navigate = useNavigate();
-
+  const toBase64=(file)=>
+    new Promise((resolve,reject)=>{
+      const reader=new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload=()=>resolve(reader.result);
+      reader.onerror=(error)=>reject(error);
+    })
   const handleRegister = async (e) => {
     e.preventDefault(); // Prevent default form submission
     const formData = new FormData();
@@ -36,19 +42,14 @@ const Register = () => {
 
 
     try {
-      // Send registration data to the server (mocked for this example)
-      const data = {
-        success: true, // Mock success response
-      };
-  
-      if (data.success) {
-        // Store email and password in local storage
+      const base64Image=await toBase64(image);
+        localStorage.setItem('username', username);
         localStorage.setItem('email', email);
         localStorage.setItem('password', password);
+        localStorage.setItem('image', base64Image);
   
         setSuccess('Registration successful!');
         navigate('/login');
-      }
     } catch (err) {
       console.error('Error:', err);
       setError('Error registering user. Please try again.');
