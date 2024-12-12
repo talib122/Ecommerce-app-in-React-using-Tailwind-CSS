@@ -9,6 +9,7 @@ const Login = () => {
   const [resetEmail, setResetEmail] = useState(''); // For forgot password
   const [resetMessage, setResetMessage] = useState(''); // For showing reset messages
   const [showForgotPassword, setShowForgotPassword] = useState(false); // Toggle forgot password view
+  const [showPassword,setShowPassword]=useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -43,24 +44,27 @@ const Login = () => {
       }}
     >
       <div className="px-[32px] flex items-center flex-col sm:px-[70px] py-16 bg-gray-300 bg-opacity-80 shadow-lg shadow-blue-400">
-        <h1 className="text-3xl sm:text-4xl mb-4 font-semibold mb-14">Login</h1>
+        <h1 className="text-3xl sm:text-4xl mb-4 font-semibold">Login</h1>
 
             <input
               type="email"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-[300px] mb-2 p-2 border sm:w-[400px] border-gray-300 rounded"
+              className="w-[280px] mb-2 p-2 border sm:w-[400px] border-gray-300 rounded"
               required
             />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-[300px] mb-2 p-2 border sm:w-[400px] border-gray-300 rounded"
-              required
-            />
+     <div className='relative flex items-center justify-center'><input
+          type={showPassword?'text':'password'}
+          placeholder="Enter password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        className="w-[280px] sm:w-[400px] mb-2 p-2 lg:w-[400px] border border-gray-300 rounded"
+        />
+        <button className='absolute right-2' onClick={()=>setShowPassword((prev)=>!prev)}>
+        {showPassword?"Hide":"Show"}
+        </button>
+        </div>
             {error && <p className="text-red-500">{error}</p>}
             <h4 className="text-[14px]">
               Not a member?{' '}

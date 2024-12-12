@@ -19,7 +19,7 @@ const Footer = () => {
   <div class="tag ">
     <h1>Contact</h1>
     <a href="#" className='center'><FontAwesomeIcon icon={faPhone} />&nbsp;03124025823</a>
-    <a href="#" className='center text-nowrap'><FontAwesomeIcon icon={faEnvelope} />&nbsp;talibawan278@gmail.com</a>
+    <a href="#" className='center text-nowrap'><FontAwesomeIcon icon={faEnvelope} className='-ml-5 sm:-ml-0'/>&nbsp;talibawan278@gmail.com</a>
     <a href="#" className='center'><FontAwesomeIcon icon={faLocationDot} />&nbsp;99-b Q Block Model Town</a>
   </div>
   <div class="tag">
@@ -41,10 +41,10 @@ const Footer = () => {
   <div class="tag">
     <h1 className=''>Follow Us</h1>
     <div class="footer_icon ">
-    <a href="#"><img src={facebook} className='icon1 w-[33px] text-black' /></a>
-    <a href="#"><img src={twitter} className='icon1 w-[17px] text-black mt-2 ml-[6px]' /></a>
-    <a href="#"><img src={instagram} className='icon1 w-[17px] text-black mt-[6px] ml-[6px]' /></a>
-    <a href="#"><img src={linkedin} className='icon1 w-[17px] text-black mt-[6px] ml-[6px]' /></a>
+    <a href="#" ><img src={facebook} className='icon1 w-[33px] text-black mt-[4px] sm:mt-0' /></a>
+    <a href="#" ><img src={twitter} className='icon1 w-[17px] text-black mt-2 ml-[3px] sm:ml-[6px]' /></a>
+    <a href="#"><img src={instagram} className='icon1 w-[17px] text-black mt-[6px] ml-1 sm:ml-[6px]' /></a>
+    <a href="#"><img src={linkedin} className='icon1 w-[17px] text-black mt-[6px] ml-1 sm:ml-[6px]' /></a>
   </div>
 </div>
   <div class="tag hidden sm:block  ">

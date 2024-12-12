@@ -7,9 +7,10 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [image, setImage] = useState(null); // State to handle image
+  const [image, setImage] = useState(null); 
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [showPassword,setShowPassword]=useState(false);
   const navigate = useNavigate();
   const toBase64=(file)=>
     new Promise((resolve,reject)=>{
@@ -19,7 +20,7 @@ const Register = () => {
       reader.onerror=(error)=>reject(error);
     })
   const handleRegister = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); 
     const formData = new FormData();
 
     // Fields validation
@@ -60,48 +61,52 @@ const Register = () => {
     <div
       className="flex items-center justify-center h-screen"
       style={{
-        backgroundImage: `url(${bgimg})`, // Replace with your image URL
+        backgroundImage: `url(${bgimg})`, 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
       <div className="px-[32px] flex items-center flex-col sm:px-[70px] py-16 bg-gray-300 bg-opacity-80 shadow-lg shadow-blue-400">
-        <h1 className="text-3xl sm:text-4xl mb-4 font-semibold mb-14">Register</h1>
+        <h1 className="text-3xl sm:text-4xl mb-4 font-semibold">Register</h1>
         <input
           type="text"
           placeholder="Enter name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-[300px] sm:w-[400px] mb-2 p-2 w-[400px] border border-gray-300 rounded"
+          className="w-[280px] sm:w-[400px] mb-2 p-2 lg:w-[400px] border border-gray-300 rounded"
         />
         <input
           type="text"
           placeholder="Enter username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="w-[300px] sm:w-[400px] mb-2 p-2 w-[400px] border border-gray-300 rounded"
+            className="w-[280px] sm:w-[400px] mb-2 p-2 lg:w-[400px] border border-gray-300 rounded"
         />
         <input
           type="email"
           placeholder="Enter email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-[300px] sm:w-[400px] mb-2 p-2 border w-[400px] border-gray-300 rounded"
+          className="w-[280px] sm:w-[400px] mb-2 p-2 lg:w-[400px] border border-gray-300 rounded"
         />
-        <input
-          type="password"
+        <div className='relative flex items-center justify-center'><input
+          type={showPassword?'text':'password'}
           placeholder="Enter password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-[300px] sm:w-[400px] mb-2 p-2 border w-[400px] border-gray-300 rounded"
+        className="w-[280px] sm:w-[400px] mb-2 p-2 lg:w-[400px] border border-gray-300 rounded"
         />
+        <button className='absolute right-2' onClick={()=>setShowPassword((prev)=>!prev)}>
+        {showPassword?"Hide":"Show"}
+        </button>
+        </div>
 
         {/* File input for image */}
         <input
           type="file"
           accept="image/*"
           onChange={(e) => setImage(e.target.files[0])} // Set the selected file to state
-          className="mb-2 p-2 border w-[300px] sm:w-[400px] border-gray-300 rounded"
+          className="mb-2 p-2 border w-[280px] md:w-[300px] sm:w-[400px] border-gray-300 rounded"
         />
 
         {error && <p className="text-red-500">{error}</p>}

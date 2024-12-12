@@ -52,7 +52,7 @@ const Deals = () => {
       <video src={v1} controls className="mt-8 px-4 md:px-24 w-[450px] md:w-[1500px] mx-auto" loop autoPlay muted />
       <div className="items-center deals-container flex flex-col md:flex-row mt-10 md:mt-16 px-8">
         <div
-          className="text-center mx-auto w-[415px] md:w-[690px]  p-6"
+          className="text-center mx-auto w-[310px] sm:w-[415px] md:w-[690px]  p-6"
           style={{
             backgroundImage: `url(${img})`,
             backgroundRepeat: 'no-repeat',
@@ -66,18 +66,18 @@ const Deals = () => {
             Deal for you is ending soon!
           </p>
 
-          <div className="countdown flex justify-center space-x-4 mb-6">
+          <div className="countdown flex justify-center space-x-1 sm:space-x-4 mb-6">
             <div className="time-box">
-              <span className="block bg-white px-4 py-2 rounded-lg text-lg md:text-xl font-bold">{timeLeft.days || '0'} Days</span>
+              <span className="block bg-white px-4 py-2 rounded-lg sm:text-lg md:text-xl font-bold">{timeLeft.days || '0'} Days</span>
             </div>
             <div className="time-box">
-              <span className="block text-lg bg-white px-4 py-2 rounded-lg md:text-xl font-bold">{timeLeft.hours || '0'} Hours</span>
+              <span className="block sm:text-lg bg-white px-4 py-2 rounded-lg md:text-xl font-bold">{timeLeft.hours || '0'} Hours</span>
             </div>
             <div className="time-box">
-              <span className="block text-lg bg-white px-4 py-2 rounded-lg md:text-xl font-bold">{timeLeft.minutes || '0'} Mins</span>
+              <span className="block sm:text-lg bg-white px-4 py-2 rounded-lg md:text-xl font-bold">{timeLeft.minutes || '0'} Mins</span>
             </div>
             <div className="time-box">
-              <span className="block text-lg bg-white px-4 py-2 rounded-lg md:text-xl font-bold">{timeLeft.seconds || '0'} Secs</span>
+              <span className="block sm:text-lg bg-white px-4 py-2 rounded-lg md:text-xl font-bold">{timeLeft.seconds || '0'} Secs</span>
             </div>
           </div>
 
@@ -88,7 +88,7 @@ const Deals = () => {
           </Link>
         </div>
 
-        <div className="deal-product mt-10 md:mt-14 md:ml-12 w-[415px] md:w-[450px] mx-auto">
+        <div className="deal-product mt-10 md:mt-14 md:ml-12 w-[310px] sm:w-[415px] md:w-[450px] mx-auto">
           <div className="product-image mx-auto">
             <img src={imgData[slider]} className="w-full max-w-md h-[200px] md:h-[300px] object-cover" alt="Product Slider" />
           </div>

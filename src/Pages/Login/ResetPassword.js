@@ -33,13 +33,13 @@ const ResetPassword = () => {
       backgroundPosition: 'center',
     }}>
       <div className='px-[32px] flex items-center flex-col sm:px-[70px] py-16 bg-gray-300 bg-opacity-80 shadow-lg shadow-blue-400'>
-        <h1 className="text-3xl sm:text-4xl mb-4 font-semibold mb-14">Reset Password</h1>
+        <h1 className="text-3xl sm:text-4xl mb-4 font-semibold ">Reset Password</h1>
         <input
           type="password"
           placeholder="Enter new password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-[300px]  mb-2 p-2 border sm:w-[400px] border-gray-300 rounded"
+          className="w-[280px]  mb-2 p-2 border sm:w-[400px] border-gray-300 rounded"
           required
         />
         <input
@@ -47,7 +47,7 @@ const ResetPassword = () => {
           placeholder="Confirm new password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-          className="w-[300px]  mb-2 p-2 border sm:w-[400px] border-gray-300 rounded"
+          className="w-[280px]  mb-2 p-2 border sm:w-[400px] border-gray-300 rounded"
           required
         />
         {message && <p className="text-green-800">{message}</p>}

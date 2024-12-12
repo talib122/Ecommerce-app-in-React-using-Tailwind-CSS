@@ -44,7 +44,7 @@ const BlogDetail = () => {
       <p className="text-gray-600 text-sm mb-4">{post.date}</p>
       <div className='flex flex-col items-center justify-center mt-[65px]'>
       <img src={post.image} alt={post.title} className="w-[950px] h-70 object-cover rounded-lg mb-8 " />
-      <p className="text-gray-700 px-[85px] leading-7 font-bold">{post.fullContent}</p>
+      <p className="text-gray-700 sm:px-[85px] leading-7 font-bold">{post.fullContent}</p>
     </div>
     </div>
   );
